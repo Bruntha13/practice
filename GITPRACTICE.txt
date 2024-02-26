@@ -1,0 +1,84 @@
+GITHUB
+
+Repositories
+The “.git” directory that we have mentioned is known as the repository, or repo for short. It contains all our history, including the actual data, the hashes of the data, dates and authors of changes, and tags and branches.
+
+How GIT works?
+Git is a distributed version control system designed to track changes in source code during software development. It's decentralized, meaning every Git directory on every computer is a full-fledged repository with complete history and version-tracking abilities. Here's a simplified overview of how Git works:
+1.	Initialization
+a.	Create Repository: To start using Git, you initialize a new repository in your project directory.
+
+git init
+
+b.	Clone Repository: Alternatively, you can clone an existing repository from a remote server to your local machine.
+
+git clone <repository_url>
+
+2.	Staging and Committing changes:
+
+a.	Add Changes: You modify files in your project directory. To include these changes in the next commit, you stage them using git add.
+
+git add <file_name>
+
+b.	Commit Changes: Once changes are staged, you commit them to the repository with a descriptive message using git commit.
+
+git commit -m "Commit message"
+
+3.	Branching and Merging:
+a.	Create Branches: Git allows you to create branches to work on features or fixes independently. This keeps your changes isolated from the main codebase.
+
+git branch <branch_name>
+
+b.	Switch Branches: You can switch between branches using git checkout.
+
+git checkout <branch_name>
+
+c.	Merge Changes: After completing work on a branch, you merge it back into the main branch (e.g., master) using git merge.
+
+git merge <branch_name>
+
+4.	Collaboration:
+a.	Push Changes: If you're working in a collaborative environment, you can share your changes with others by pushing them to a remote repository.
+
+git push origin <branch_name>
+
+b.	Pull Changes: Conversely, you can pull changes made by others from the remote repository to your local repository using git pull.
+
+git pull origin <branch_name>
+
+5.	History and Inspection:
+a.	View Log: You can view the commit history of a repository using git log.
+
+git log
+
+b.	Inspect Changes: You can view the changes made to a file using git diff.
+
+git diff <file_name>
+
+6.	Remote Repositories:
+a.	Add Remote: You can add a remote repository, typically hosted on services like GitHub or GitLab, using git remote add.
+
+git remote add origin <repository_url>
+
+b.	Fetch and Pull: Fetch retrieves changes from the remote repository without merging them into your local repository. Pull combines fetch and merge.
+
+git fetch origin
+git pull origin <branch_name>
+
+
+
+--initial commit
+git init
+git status
+git add .
+git status
+git commit -m "Initial commit"
+git branch
+git remote add origin https:
+git push -u origin master
+
+--second commit
+git status
+git add  .
+git commit -m "Second Commit"
+git push

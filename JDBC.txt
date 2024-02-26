@@ -1,0 +1,73 @@
+JDBC
+
+JDBC
+
+JDBC stands for Java Database Connectivity, which is a standard Java API for database-independent connectivity between the Java programming language and a wide range of databases.
+The JDBC library includes APIs for each of the tasks mentioned below that are commonly associated with database usage.
+•	Making a connection to a database.
+•	Creating SQL or MySQL statements.
+•	Executing SQL or MySQL queries in the database.
+•	Viewing & Modifying the resulting records.
+
+Key Components of JDBC:
+1.	DriverManager: The DriverManager class is responsible for managing a list of database drivers. It helps to establish a connection to the database by loading the appropriate driver.
+2.	Driver: A JDBC driver is a software component that enables Java applications to communicate with a specific type of database. There are four types of JDBC drivers: Type 1 (JDBC-ODBC bridge), Type 2 (partially Java drivers), Type 3 (pure Java drivers), and Type 4 (fully Java drivers).
+3.	Connection: The Connection interface represents a connection to a database. It allows the application to establish a connection to the database, manage transactions, and create statements.
+4.	Statement: The Statement interface represents an SQL statement that is to be executed on the database. It allows the application to execute SQL queries, updates, inserts, deletes, etc.
+5.	ResultSet: The ResultSet interface represents the result set of a query executed on the database. It provides methods for iterating over the rows of the result set and retrieving data from each row.
+
+Basic Steps to Use JDBC:
+1.	Import the Package: java.sql.*;
+2.	Load the Driver: Register the JDBC driver using Class.forName() or let it be loaded implicitly by the DriverManager class.
+3.	Establish Connection: Create a connection to the database using DriverManager.getConnection(), passing the database URL, username, and password.
+4.	Create Statement: Create a Statement or PreparedStatement object from the connection to execute SQL queries.
+5.	Execute Query/Update: Execute SQL queries (e.g., SELECT) or updates (e.g., INSERT, UPDATE, DELETE) using the Statement or PreparedStatement object.
+6.	Process Results: If executing a query, process the results returned by the database using the ResultSet object.
+7.	Close Resources: Close the ResultSet, Statement, and Connection objects to release database resources when done.
+
+
+
+
+
+EXAMPLE CODE:
+
+import java.sql.*;
+
+public class FirstExample {
+   static final String DB_URL = "jdbc:mysql://localhost/TUTORIALSPOINT";
+   static final String USER = "guest";
+   static final String PASS = "guest123";
+   static final String QUERY = "SELECT id, first, last, age FROM Employees";
+
+   public static void main(String[] args) {
+      // Open a connection
+      try(Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);
+         Statement stmt = conn.createStatement();
+         ResultSet rs = stmt.executeQuery(QUERY);) {
+         // Extract data from result set
+         while (rs.next()) {
+            // Retrieve by column name
+            System.out.print("ID: " + rs.getInt("id"));
+            System.out.print(", Age: " + rs.getInt("age"));
+            System.out.print(", First: " + rs.getString("first"));
+            System.out.println(", Last: " + rs.getString("last"));
+         }
+      } catch (SQLException e) {
+         e.printStackTrace();
+      } 
+   }
+}
+
+
+OUTPUT:
+
+C:\>java FirstExample
+Connecting to database...
+Creating statement...
+ID: 100, Age: 18, First: Zara, Last: Ali
+ID: 101, Age: 25, First: Mahnaz, Last: Fatma
+ID: 102, Age: 30, First: Zaid, Last: Khan
+ID: 103, Age: 28, First: Sumit, Last: Mittal
+C:\>
+
+
