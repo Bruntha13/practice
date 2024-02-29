@@ -95,6 +95,31 @@ git fetch origin
 git pull origin <branch_name>
 
 
+Pulling to your local branch from the remote
+
+In GitHub Desktop, use the  Current Branch drop-down, and select the local branch you want to update.
+
+To check for commits on the remote branch, click Fetch origin
+
+To pull any commits from the remote branch, click Pull origin or Pull origin with rebase.
+
+Resolve any merge conflicts in your preferred way, using a text editor, the command line, or another tool. 
+For more information, see "Addressing merge conflicts."
+
+Merging another branch into your project branch
+
+In GitHub Desktop, click  Current Branch.
+
+Click Choose a branch to merge into BRANCH.
+
+Click the branch you want to merge into the current branch, then click Merge BRANCH into BRANCH.
+
+Note: If there are merge conflicts, GitHub Desktop will warn you above the Merge BRANCH into BRANCH button. 
+You will not be able to merge the branches until you have resolved all conflicts.
+
+To push your local changes to the remote repository, in the repository bar, click Push origin.
+
+
 
 --initial commit
 git init
