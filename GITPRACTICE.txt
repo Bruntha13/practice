@@ -119,20 +119,3 @@ You will not be able to merge the branches until you have resolved all conflicts
 
 To push your local changes to the remote repository, in the repository bar, click Push origin.
 
-
-
---initial commit
-git init
-git status
-git add .
-git status
-git commit -m "Initial commit"
-git branch
-git remote add origin https:
-git push -u origin master
-
---second commit
-git status
-git add  .
-git commit -m "Second Commit"
-git push
